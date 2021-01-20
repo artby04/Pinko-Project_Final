@@ -832,6 +832,8 @@ document.querySelectorAll('.menu__list li a').forEach(function(item) {
     burger.classList.remove('active')
     menu.classList.remove('active')
     document.body.classList.remove('active')
+  } )
+});
 	  
 window.addEventListener('scroll', event => {
   let navigationLinks = document.querySelectorAll('.menu__body ul li a');

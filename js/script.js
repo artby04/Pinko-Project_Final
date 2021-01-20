@@ -957,13 +957,7 @@ ScrollReveal().reveal('.gall-rovel6',{
   duration: 900,
   delay: 250
 });
-ScrollReveal().reveal('.main__text',{
-  distance: '50%',
-  origin: 'left',
-  opacity: 0,
-  duration: 1600,
-  delay: 300
-});
+
 ScrollReveal().reveal('.form',{
   distance: '50%',
   origin: 'right',
@@ -987,5 +981,12 @@ ScrollReveal().reveal('.footer__down',{
   delay: 300
 });
 window.onload = function () {
-  document.body.classList.add('loaded');
+  document.body.classList.add('loaded');	
+  ScrollReveal().reveal('.main__text',{
+  distance: '50%',
+  origin: 'left',
+  opacity: 0,
+  duration: 1600,
+  delay: 300
+});
 }

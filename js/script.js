@@ -783,19 +783,6 @@ let burger = document.getElementById('burger'),
 } 
 )
 
-$("a.scrollto").click(function () {
-  var elementClick = $(this).attr("href");
-  var destination = $(elementClick).offset().top;
-  jQuery("html:not(:animated),body:not(:animated)").animate(
-    {
-      scrollTop: destination,
-    },
-    350
-  );
-  return false;
-});
-
-
 var waypoint = new Waypoint({
   element: document.getElementById('pricing'),
   handler: function() {
@@ -988,3 +975,21 @@ window.onload = function () {
   delay: 300
 });
 }
+window.onload = function () {
+				document.body.classList.add("loaded_hiding");
+				window.setTimeout(function () {
+					document.body.classList.add("loaded");
+					document.body.classList.remove("loaded_hiding");
+				}, 500);
+			};
+$("a.scrollto").click(function () {
+  var elementClick = $(this).attr("href");
+  var destination = $(elementClick).offset().top;
+  jQuery("html:not(:animated),body:not(:animated)").animate(
+    {
+      scrollTop: destination,
+    },
+    650
+  );
+  return false;
+});

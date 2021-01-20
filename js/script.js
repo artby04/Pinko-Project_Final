@@ -982,14 +982,24 @@ window.onload = function () {
 					document.body.classList.remove("loaded_hiding");
 				}, 500);
 			};
-$("a.scrollto").click(function () {
-  var elementClick = $(this).attr("href");
-  var destination = $(elementClick).offset().top;
-  jQuery("html:not(:animated),body:not(:animated)").animate(
-    {
-      scrollTop: destination,
-    },
-    650
-  );
-  return false;
+
+document.querySelectorAll('a[href^="#"').forEach(link => {
+
+  link.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      let href = this.getAttribute('href').substring(1);
+
+      const scrollTarget = document.getElementById(href);
+
+      const topOffset = document.querySelector('.scrollto').offsetHeight +95;
+      // const topOffset = 0; // если не нужен отступ сверху 
+      const elementPosition = scrollTarget.getBoundingClientRect().top;
+      const offsetPosition = elementPosition - topOffset;
+
+      window.scrollBy({
+          top: offsetPosition,
+          behavior: 'smooth'
+      });
+  });
 });

@@ -783,27 +783,14 @@ let burger = document.getElementById('burger'),
 } 
 )
 
-document.querySelectorAll('a[href^="#"').forEach(link => {
-
-  link.addEventListener('click', function(e) {
-      e.preventDefault();
-
-      let href = this.getAttribute('href').substring(1);
-
-      const scrollTarget = document.getElementById(href);
-
-      const topOffset = document.querySelector('.scrollto').offsetHeight +95;
-      // const topOffset = 0; // если не нужен отступ сверху 
-      const elementPosition = scrollTarget.getBoundingClientRect().top;
-      const offsetPosition = elementPosition - topOffset;
-
-      window.scrollBy({
-          top: offsetPosition,
-          behavior: 'smooth'
-      });
+$(document).ready(function(){
+  $("#menu").on("click","a", function (event) {
+      event.preventDefault();
+      var id  = $(this).attr('href'),
+          top = $(id).offset().top;
+      $('body,html').animate({scrollTop: top}, 600);
   });
 });
-
 
 
 var waypoint = new Waypoint({

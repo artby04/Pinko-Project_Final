@@ -827,6 +827,12 @@ if (viewportWidth > 992.98) {
   } )
 });
 }
+document.querySelectorAll('.menu__list li a').forEach(function(item) {
+  item.addEventListener('click', function remove() {
+    burger.classList.remove('active')
+    menu.classList.remove('active')
+    document.body.classList.remove('active')
+	  
 window.addEventListener('scroll', event => {
   let navigationLinks = document.querySelectorAll('.menu__body ul li a');
   let fromTop = window.scrollY + 220;

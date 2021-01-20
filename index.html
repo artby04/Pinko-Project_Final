@@ -448,19 +448,6 @@
 				</footer>
 			</main>
 		</div>
-
-		<script>
-			window.onload = function () {
-				document.body.classList.add("loaded_hiding");
-				window.setTimeout(function () {
-					document.body.classList.add("loaded");
-					document.body.classList.remove("loaded_hiding");
-				}, 500);
-			};
-		</script>
-		<script>
-			$("a.scrollto").click(function () { var elementClick = $(this).attr("href"); var destination = $(elementClick).offset().top; jQuery("html:not(:animated),body:not(:animated)").animate( { scrollTop: destination, }, 350 ); return false; });
-		</script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 		<script src="https://unpkg.com/scrollreveal"></script>
 		<script src="js/script.js"></script>

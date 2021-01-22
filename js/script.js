@@ -156,7 +156,7 @@ ScrollReveal().reveal('.form',{
 
 ScrollReveal().reveal('.soc-media__items',{
   distance: '50%',
-  origin: 'bottom',
+  origin: 'top',
   opacity: 0,
   duration: 1600,
   delay: 300
